@@ -4,14 +4,47 @@
     <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
     <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-    <title>HTML Template til React</title>
+    <script src="https://kit.fontawesome.com/eaed46d871.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="assets/css/main.css">
+    <title>React Livretter</title>
   </head>
   <body>
-
-    <div id="root"></div>
+    <h1>Yndlingskager</h1>
+    <div id="root">
+    </div>
 
     <script type="text/babel">
       // Her skal du indsætte din react kode
+
+    const cakes = [
+        { name: 'Færøsk æblekage', rating: '5/5'},
+        { name: 'Gulerodskage', rating: '4/5'},
+        { name: 'Den du ved nok', rating: '4/5'},
+        { name: 'Chokolade cookies', rating: '5/5'}
+    ]
+    
+    const ShowCakes = (props) => {
+        console.log(props);
+        return(
+            <ul>
+                {props.map((item, key) => {
+                    return(
+                        //key for ellers brokker den sig (skal have en unik key)
+                        <Cake key={key} name={item.name} rating={item.rating} />
+                    )
+                })}
+            </ul>
+        )
+    }
+
+    const Cake = (props) => {
+        return <li> {props.name}, {props.rating}<i className="fas fa-star"></i></li>
+    }
+
+    ReactDOM.render(
+        <ShowCakes data={cakes} />,
+        document.getElementById('root')
+    )
 
     </script>
 

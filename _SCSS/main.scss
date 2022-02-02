@@ -1,0 +1,21 @@
+h1{
+    display: flex;
+    justify-content: center;
+    font-size: 2vw;
+    color: rgb(151, 88, 233);
+}
+#root{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    ul{
+        list-style: decimal;
+        li{
+            margin-bottom: 1vw;
+            font-size: 2vw;
+            i{
+                color:rgb(255, 217, 0);
+            }
+        }
+    }
+}
