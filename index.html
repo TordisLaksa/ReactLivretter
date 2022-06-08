@@ -24,10 +24,10 @@
     ]
     
     const ShowCakes = (props) => {
-        console.log(props);
+    
         return(
             <ul>
-                {props.map((item, key) => {
+                {props.data && props.data.map((item, key) => {
                     return(
                         //key for ellers brokker den sig (skal have en unik key)
                         <Cake key={key} name={item.name} rating={item.rating} />
@@ -47,6 +47,5 @@
     )
 
     </script>
-
   </body>
 </html>
